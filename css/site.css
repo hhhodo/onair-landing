@@ -101,6 +101,7 @@ h1,h2,h3,h4{font-weight:400;}
   text-transform:uppercase;}
 
 .work-card{position:relative;}
+.work-card__photo{width:100%;display:block;object-fit:cover;}
 .work-card__cap{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;
   padding:10px;gap:10px;background:rgba(0,0,0,.55);}
 .work-card__idx,.work-card__name{font-size:var(--fs-counter);letter-spacing:var(--ls-counter);
@@ -153,7 +154,7 @@ h1,h2,h3,h4{font-weight:400;}
 .svc-item__labels{display:grid;gap:0;}
 .svc-item__labels span{font-size:var(--fs-expanded-body);letter-spacing:var(--ls-expanded-body);
   line-height:var(--lh-expanded-body);padding-block:10px;}
-.svc-item__img{aspect-ratio:1/1;width:100%;}
+.svc-item__img{aspect-ratio:1/1;width:100%;display:block;object-fit:cover;}
 
 /* ---------- collage ---------- */
 .collage-pin-wrap{position:relative;height:250vh;}
