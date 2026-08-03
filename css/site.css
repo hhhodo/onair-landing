@@ -152,7 +152,7 @@ h1,h2,h3,h4{font-weight:400;}
 .closer__sub{font-size:var(--fs-closer-sub);line-height:var(--lh-closer-sub);margin-top:16px;max-width:640px;}
 .btn{display:inline-flex;align-items:center;justify-content:center;width:200px;height:200px;
   border-radius:100px;border:1px solid var(--white);background:transparent;color:var(--white);
-  font-size:var(--fs-closer-sub);cursor:pointer;flex:0 0 auto;text-align:center;}
+  font-size:var(--fs-closer-sub);cursor:pointer;flex:0 0 auto;text-align:center;margin-right:80px;}
 .btn:hover{background:var(--white);color:var(--bg-black);}
 
 /* ---------- footer ---------- */
