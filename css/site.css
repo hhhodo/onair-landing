@@ -132,9 +132,10 @@ h1,h2,h3,h4{font-weight:400;}
 
 /* ---------- collage ---------- */
 .collage-pin-wrap{position:relative;height:250vh;}
-.collage-pin{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.collage-pin{position:sticky;top:0;height:100vh;min-height:800px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;}
 .collage{width:100%;}
-.collage__ring{position:relative;height:700px;overflow:hidden;}
+.collage__ring{position:relative;height:780px;overflow:hidden;}
 .collage__wheel{position:absolute;inset:0;transform-origin:50% 100%;will-change:transform;}
 .collage__tile{position:absolute;width:180px;height:250px;top:100%;left:50%;
   transform-origin:center;border-radius:0;}
