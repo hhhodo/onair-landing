@@ -42,3 +42,70 @@ if (nav && collagePinWrapForNav) {
   );
   navObserver.observe(collagePinWrapForNav);
 }
+
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const revealTargets = document.querySelectorAll('[data-reveal]');
+if (revealTargets.length) {
+  if (reduceMotion) {
+    revealTargets.forEach(el => el.classList.add('is-visible'));
+  } else {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    revealTargets.forEach(el => revealObserver.observe(el));
+  }
+}
+
+function animateCount(el) {
+  const target = parseFloat(el.dataset.count);
+  const decimals = (el.dataset.count.split('.')[1] || '').length;
+  const duration = 1500;
+  const start = performance.now();
+
+  function frame(now) {
+    const elapsed = Math.min(1, (now - start) / duration);
+    const eased = 1 - Math.pow(1 - elapsed, 3);
+    const value = target * eased;
+    el.textContent = value.toLocaleString('en-US', {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals
+    });
+    if (elapsed < 1) {
+      requestAnimationFrame(frame);
+    } else {
+      el.textContent = target.toLocaleString('en-US', {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals
+      });
+    }
+  }
+  requestAnimationFrame(frame);
+}
+
+const statGrid = document.querySelector('.stat-grid');
+if (statGrid) {
+  const statValues = statGrid.querySelectorAll('.stat-cell__value[data-count]');
+  if (reduceMotion) {
+    statValues.forEach(el => {
+      const decimals = (el.dataset.count.split('.')[1] || '').length;
+      el.textContent = parseFloat(el.dataset.count).toLocaleString('en-US', {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals
+      });
+    });
+  } else {
+    const statObserver = new IntersectionObserver(([entry], observer) => {
+      if (entry.isIntersecting) {
+        statValues.forEach(animateCount);
+        observer.disconnect();
+      }
+    }, { threshold: 0.3 });
+    statObserver.observe(statGrid);
+  }
+}
