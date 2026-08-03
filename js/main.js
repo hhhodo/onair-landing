@@ -32,3 +32,13 @@ if (collageWheel && collagePinWrap && !window.matchMedia('(prefers-reduced-motio
 
   updateWheelRotation();
 }
+
+const nav = document.querySelector('.nav');
+const collagePinWrapForNav = document.querySelector('.collage-pin-wrap');
+if (nav && collagePinWrapForNav) {
+  const navObserver = new IntersectionObserver(
+    ([entry]) => nav.classList.toggle('nav--transparent', entry.isIntersecting),
+    { threshold: 0 }
+  );
+  navObserver.observe(collagePinWrapForNav);
+}

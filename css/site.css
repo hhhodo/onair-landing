@@ -54,7 +54,8 @@ h1,h2,h3,h4{font-weight:400;}
 .ph--1-1{aspect-ratio:1/1;}
 
 /* ---------- nav ---------- */
-.nav{position:sticky;top:0;z-index:20;background:var(--bg-black);height:66px;}
+.nav{position:sticky;top:0;z-index:20;background:var(--bg-black);height:66px;transition:background .3s ease;}
+.nav--transparent{background:transparent;}
 .nav__row{display:flex;align-items:center;justify-content:space-between;height:66px;}
 .nav__logo{font-size:var(--fs-nav);letter-spacing:0;}
 .nav__links{display:flex;align-items:center;gap:10px;}
