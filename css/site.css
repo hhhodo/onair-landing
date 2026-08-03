@@ -135,8 +135,8 @@ h1,h2,h3,h4{font-weight:400;}
 .collage__ring{position:relative;height:700px;overflow:hidden;}
 .collage__tile{position:absolute;width:180px;height:250px;top:100%;left:50%;
   transform-origin:center;border-radius:0;}
-.collage__cap{position:relative;text-align:center;padding-inline:20px;margin-top:80px;
-  display:flex;flex-direction:column;gap:20px;}
+.collage__cap{position:absolute;left:50%;bottom:60px;transform:translateX(-50%);
+  text-align:center;padding-inline:20px;display:flex;flex-direction:column;gap:20px;}
 .collage__cap p{font-size:var(--fs-collage-sub);line-height:var(--lh-collage-sub);}
 .collage__cap h3{font-size:var(--fs-collage-title);line-height:1.2;font-weight:400;}
 
