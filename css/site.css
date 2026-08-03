@@ -133,6 +133,7 @@ h1,h2,h3,h4{font-weight:400;}
 /* ---------- collage ---------- */
 .collage{padding-block:120px 80px;overflow:hidden;}
 .collage__ring{position:relative;height:700px;overflow:hidden;}
+.collage__wheel{position:absolute;inset:0;transform-origin:50% 100%;will-change:transform;}
 .collage__tile{position:absolute;width:180px;height:250px;top:100%;left:50%;
   transform-origin:center;border-radius:0;}
 .collage__cap{position:absolute;left:50%;bottom:60px;transform:translateX(-50%);
