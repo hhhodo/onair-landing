@@ -8,14 +8,17 @@ document.querySelectorAll('.svc-item__row').forEach(row => {
 });
 
 const collageWheel = document.querySelector('.collage__wheel');
-if (collageWheel && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  const collageSection = document.querySelector('.collage');
+const collagePinWrap = document.querySelector('.collage-pin-wrap');
+if (collageWheel && collagePinWrap && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   let ticking = false;
 
   function updateWheelRotation() {
-    const rect = collageSection.getBoundingClientRect();
+    const rect = collagePinWrap.getBoundingClientRect();
     const vh = window.innerHeight;
-    const progress = Math.min(1, Math.max(0, (vh - rect.top) / (vh + rect.height)));
+    const scrollRange = rect.height - vh;
+    const progress = scrollRange > 0
+      ? Math.min(1, Math.max(0, -rect.top / scrollRange))
+      : 0;
     collageWheel.style.transform = `rotate(${progress * 360}deg)`;
     ticking = false;
   }
