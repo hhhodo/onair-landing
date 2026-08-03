@@ -109,3 +109,87 @@ if (statGrid) {
     statObserver.observe(statGrid);
   }
 }
+
+const dotfield = document.querySelector('.hero__dotfield');
+if (dotfield && !reduceMotion) {
+  const SPACING = 28;
+  const RADIUS = 150;
+  const MAX_SCALE = 3.2;
+
+  let dots = [];
+  let activeDots = new Set();
+  let pointer = null;
+  let ticking = false;
+
+  function buildDots() {
+    dotfield.innerHTML = '';
+    dots = [];
+    const w = dotfield.offsetWidth;
+    const h = dotfield.offsetHeight;
+    const cols = Math.ceil(w / SPACING) + 1;
+    const rows = Math.ceil(h / SPACING) + 1;
+    const frag = document.createDocumentFragment();
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        const x = c * SPACING;
+        const y = r * SPACING;
+        const el = document.createElement('div');
+        el.className = 'hero__dot';
+        el.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%) scale(1)`;
+        frag.appendChild(el);
+        dots.push({ el, x, y });
+      }
+    }
+    dotfield.appendChild(frag);
+  }
+
+  function updateDots() {
+    ticking = false;
+    if (!pointer) return;
+    const stillActive = new Set();
+    for (const dot of dots) {
+      const dx = dot.x - pointer.x;
+      const dy = dot.y - pointer.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < RADIUS) {
+        const t = 1 - dist / RADIUS;
+        const scale = 1 + t * (MAX_SCALE - 1);
+        dot.el.style.transform = `translate(${dot.x}px, ${dot.y}px) translate(-50%, -50%) scale(${scale})`;
+        dot.el.classList.add('hero__dot--cross');
+        stillActive.add(dot.el);
+      }
+    }
+    activeDots.forEach(el => {
+      if (!stillActive.has(el)) {
+        el.classList.remove('hero__dot--cross');
+        el.style.transform = el.style.transform.replace(/scale\([^)]+\)/, 'scale(1)');
+      }
+    });
+    activeDots = stillActive;
+  }
+
+  function requestUpdate() {
+    if (!ticking) {
+      requestAnimationFrame(updateDots);
+      ticking = true;
+    }
+  }
+
+  buildDots();
+  window.addEventListener('resize', buildDots);
+
+  const heroSection = document.querySelector('.hero');
+  heroSection.addEventListener('mousemove', (e) => {
+    const rect = dotfield.getBoundingClientRect();
+    pointer = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+    requestUpdate();
+  });
+  heroSection.addEventListener('mouseleave', () => {
+    pointer = null;
+    activeDots.forEach(el => {
+      el.classList.remove('hero__dot--cross');
+      el.style.transform = el.style.transform.replace(/scale\([^)]+\)/, 'scale(1)');
+    });
+    activeDots = new Set();
+  });
+}
