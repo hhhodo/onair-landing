@@ -73,7 +73,8 @@ h1,h2,h3,h4{font-weight:400;}
   will-change:transform;}
 .hero__dot--cross{clip-path:polygon(35% 0%,65% 0%,65% 35%,100% 35%,100% 65%,65% 65%,
   65% 100%,35% 100%,35% 65%,0% 65%,0% 35%,35% 35%);background:var(--white);}
-.hero__illustration{position:relative;z-index:1;display:block;width:min(480px,70%);height:auto;object-fit:contain;
+.hero__illustration{position:relative;z-index:1;display:block;width:min(480px,70%);height:auto;
+  aspect-ratio:1548/1660;object-fit:contain;
   margin-inline:auto;margin-bottom:80px;
   filter:drop-shadow(0 24px 40px rgba(0,0,0,.4));
   animation:hero-float 5s ease-in-out infinite;}
