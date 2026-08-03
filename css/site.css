@@ -63,7 +63,9 @@ h1,h2,h3,h4{font-weight:400;}
 .nav__links .sep{font-size:var(--fs-nav-sep);color:var(--white);}
 
 /* ---------- hero ---------- */
-.hero{position:relative;overflow:hidden;padding-block:120px 0;}
+.hero{position:relative;overflow:hidden;min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;
+  padding-block:80px;}
 .hero__dotfield{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0;}
 .hero__dot{position:absolute;top:0;left:0;width:4px;height:4px;background:var(--color-primary-700);
   clip-path:none;transform:translate(-50%,-50%) scale(1);
