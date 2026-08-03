@@ -34,13 +34,17 @@ if (collageWheel && collagePinWrap && !window.matchMedia('(prefers-reduced-motio
 }
 
 const nav = document.querySelector('.nav');
-const collagePinWrapForNav = document.querySelector('.collage-pin-wrap');
-if (nav && collagePinWrapForNav) {
-  const navObserver = new IntersectionObserver(
-    ([entry]) => nav.classList.toggle('nav--transparent', entry.isIntersecting),
-    { threshold: 0 }
-  );
-  navObserver.observe(collagePinWrapForNav);
+const transparentNavSections = document.querySelectorAll('.hero, .collage-pin-wrap');
+if (nav && transparentNavSections.length) {
+  const intersecting = new Set();
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) intersecting.add(entry.target);
+      else intersecting.delete(entry.target);
+    });
+    nav.classList.toggle('nav--transparent', intersecting.size > 0);
+  }, { threshold: 0 });
+  transparentNavSections.forEach(section => navObserver.observe(section));
 }
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
