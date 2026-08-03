@@ -1,0 +1,217 @@
+<!--
+variant:
+typo=loud
+image=medium
+color=mono
+
+image-radius=sharp
+card-radius=sharp
+button-radius=round
+
+border=hairline
+button-style=solid
+fw=700/400
+spacing=space-section
+-->
+<!--
+layout:
+Nav         → full-bleed
+Hero        → full-bleed
+Latest      → full-bleed → 4-4-4 (x2 rows)
+Stats intro → 5-7
+Stats grid  → 3-3-3-3 (x2 rows)
+Services    → full-bleed list, expanded row 6-6
+Collage     → full-bleed
+Closer      → 8-4
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONAIR — 콘텐츠로 브랜드의 미래를 만듭니다</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container">
+    <a href="#" class="nav__logo">ONAIR</a>
+    <nav class="nav__links">
+      <a href="#about">소개</a>
+      <a href="#works">작업</a>
+      <a href="#services">서비스</a>
+      <a href="#insights">인사이트</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero__dots"></div>
+  <div class="container">
+    <div class="ph hero__visual"></div>
+    <h1 class="hero__title">콘텐츠와 브랜드의<br>새로운 미래를 만듭니다</h1>
+  </div>
+</section>
+
+<section class="section section--dark" id="works">
+  <div class="container">
+    <div class="section__head">
+      <div><h2>LATEST<span class="section__count">[06]</span></h2></div>
+    </div>
+    <div class="grid">
+      <div class="gcell" style="grid-column:1/5">
+        <div class="work-card">
+          <div class="work-card__img"><div class="ph ph--3-4"></div>
+            <div class="work-card__cap"><span class="work-card__idx">001</span><span class="work-card__name">브랜드 다큐멘터리</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="gcell" style="grid-column:5/9">
+        <div class="work-card">
+          <div class="work-card__img"><div class="ph ph--3-4"></div>
+            <div class="work-card__cap"><span class="work-card__idx">002</span><span class="work-card__name">캠페인 필름 시리즈</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="gcell" style="grid-column:9/13">
+        <div class="work-card">
+          <div class="work-card__img"><div class="ph ph--3-4"></div>
+            <div class="work-card__cap"><span class="work-card__idx">003</span><span class="work-card__name">소셜 콘텐츠 채널 운영</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="gcell" style="grid-column:1/5">
+        <div class="work-card">
+          <div class="work-card__img"><div class="ph ph--3-4"></div>
+            <div class="work-card__cap"><span class="work-card__idx">004</span><span class="work-card__name">라이브 스트리밍 제작</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="gcell" style="grid-column:5/9">
+        <div class="work-card">
+          <div class="work-card__img"><div class="ph ph--3-4"></div>
+            <div class="work-card__cap"><span class="work-card__idx">005</span><span class="work-card__name">아티스트 인터뷰 시리즈</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="gcell" style="grid-column:9/13">
+        <div class="work-card">
+          <div class="work-card__img"><div class="ph ph--3-4"></div>
+            <div class="work-card__cap"><span class="work-card__idx">006</span><span class="work-card__name">브랜드 오리지널 시리즈</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark" id="about">
+  <div class="container">
+    <div class="grid">
+      <div class="gcell stats-intro" style="grid-column:1/6">
+        <h2>혁신의<br>기록</h2>
+        <p class="subtle">숫자로 증명하는 압도적인 제작력</p>
+        <p>2014년 설립 이후, 우리는 단 한 순간도 멈추지 않고 가파른 성장 곡선을 그려왔습니다.</p>
+        <p>현장에서 증명해낸 제작 데이터와 노하우는 우리의 자산이자 자부심입니다. 하지만 우리의 전성기는 아직 오지 않았기에, 오늘도 한계를 넘어 더 높은 곳을 향해 나아갑니다.</p>
+      </div>
+      <div class="gcell" style="grid-column:6/13">
+        <div class="badge-orbit">
+          <span class="badge-orbit__label">ONAIR</span>
+          <span class="badge-orbit__label badge-orbit__label--bottom">CONTENT</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-cell"><div class="stat-cell__label">누적 콘텐츠 제작</div><div><span class="stat-cell__value">5,375</span><span class="stat-cell__unit">편</span></div></div>
+      <div class="stat-cell"><div class="stat-cell__label">파트너 브랜드</div><div><span class="stat-cell__value">329</span><span class="stat-cell__unit">개</span></div></div>
+      <div class="stat-cell"><div class="stat-cell__label">캠페인 완료율</div><div><span class="stat-cell__value">79.2</span><span class="stat-cell__unit">%</span></div></div>
+      <div class="stat-cell"><div class="stat-cell__label">누적 조회수</div><div><span class="stat-cell__value">5,304</span><span class="stat-cell__unit">만</span></div></div>
+      <div class="stat-cell"><div class="stat-cell__label">고객 만족도</div><div><span class="stat-cell__value">4.9</span><span class="stat-cell__unit">/5.0</span></div></div>
+      <div class="stat-cell"><div class="stat-cell__label">제작 연차</div><div><span class="stat-cell__value">12</span><span class="stat-cell__unit">년</span></div></div>
+      <div class="stat-cell"><div class="stat-cell__label">설립일</div><div><span class="stat-cell__value">2014</span><span class="stat-cell__unit">년</span></div></div>
+      <div class="stat-cell"><div class="stat-cell__label">진행 프로젝트</div><div><span class="stat-cell__value">128</span><span class="stat-cell__unit">+</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark" id="services">
+  <div class="container">
+    <h2>Services</h2>
+    <div class="svc-list">
+      <div class="svc-item">
+        <div class="svc-item__title">콘텐츠 전략</div>
+        <div class="svc-item__body">
+          <div class="svc-item__copy">
+            <p>시장과 시청자를 꿰뚫는 인사이트로 흔들림 없는 방향성과 실행 가능한 전략을 함께 그려, 차이를 만들 첫걸음을 설계합니다.</p>
+          </div>
+          <div class="svc-item__aside">
+            <div class="svc-item__labels">
+              <span>시장 분석</span>
+              <span>크리에이티브 접근</span>
+              <span>핵심 가치</span>
+            </div>
+            <div class="svc-item__labels">
+              <span>가치 제안</span>
+              <span>브랜드 특성</span>
+              <span>브랜드만의 목소리</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="svc-item"><div class="svc-item__title">웹사이트 제작</div></div>
+      <div class="svc-item"><div class="svc-item__title">비주얼 아이덴티티</div></div>
+      <div class="svc-item"><div class="svc-item__title">UX 리서치</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="collage">
+  <div class="collage__row">
+    <div class="ph collage__tile collage__tile--tall"></div>
+    <div class="ph collage__tile collage__tile--wide"></div>
+    <div class="ph collage__tile collage__tile--square"></div>
+    <div class="ph collage__tile collage__tile--tall"></div>
+    <div class="ph collage__tile collage__tile--wide"></div>
+    <div class="ph collage__tile collage__tile--tall"></div>
+  </div>
+  <div class="collage__cap">
+    <p>ONAIR, 콘텐츠로 더 나은 이야기를 연결합니다</p>
+    <h3>Create Better Stories</h3>
+  </div>
+</section>
+
+<section class="section closer">
+  <div class="container">
+    <div class="closer__grid">
+      <div class="gcell" style="grid-column:1/9">
+        <h2 class="closer__title">MEET<br>THE CREATIVE<br>MINDS</h2>
+        <p class="closer__sub">새로운 기준을 만드는 ONAIR, 크리에이티브의 철학과 비전을 만나보세요.</p>
+      </div>
+      <div class="gcell closer__cta" style="grid-column:9/13">
+        <button class="btn">문의하기</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__legal">
+      <a href="#">이용약관</a>
+      <a href="#">개인정보처리방침</a>
+      <a href="#">이메일무단수집거부</a>
+    </div>
+    <div class="footer__meta">
+      <p>(주)온에어미디어 · 대표이사 : 김서준 · 사업자 등록번호 : 214-86-11290</p>
+      <p>주소 : 서울특별시 성동구 성수이로 12길 25, 4층</p>
+    </div>
+    <div class="footer__copy">© 2026 ONAIR. All Rights Reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
