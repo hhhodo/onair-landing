@@ -164,7 +164,7 @@ h1,h2,h3,h4{font-weight:400;}
 .collage__wheel{position:absolute;inset:0;transform-origin:50% 100%;will-change:transform;}
 .collage__tile{position:absolute;width:180px;height:250px;top:100%;left:50%;
   transform-origin:center;border-radius:0;}
-.collage__cap{position:absolute;left:50%;bottom:60px;translate:-50% 0;
+.collage__cap{position:absolute;left:0;right:0;bottom:60px;width:max-content;margin-inline:auto;
   text-align:center;padding-inline:20px;display:flex;flex-direction:column;gap:20px;}
 .collage__cap p{font-size:var(--fs-collage-sub);line-height:var(--lh-collage-sub);}
 .collage__cap h3{font-size:var(--fs-collage-title);line-height:1.2;font-weight:400;}
