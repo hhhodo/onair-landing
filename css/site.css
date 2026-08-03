@@ -63,8 +63,21 @@ h1,h2,h3,h4{font-weight:400;}
 .nav__links .sep{font-size:var(--fs-nav-sep);color:var(--white);}
 
 /* ---------- hero ---------- */
-.hero{padding-block:120px 0;}
-.hero__visual{width:70%;max-width:900px;margin-inline:auto;aspect-ratio:16/9;margin-bottom:80px;}
+.hero{position:relative;overflow:hidden;
+  background-image:radial-gradient(circle,var(--color-primary-700) 1.5px,transparent 1.5px);
+  background-size:28px 28px;
+  padding-block:120px 0;}
+.hero__illustration{display:block;width:min(480px,70%);height:auto;object-fit:contain;
+  margin-inline:auto;margin-bottom:80px;
+  filter:drop-shadow(0 24px 40px rgba(0,0,0,.4));
+  animation:hero-float 5s ease-in-out infinite;}
+@keyframes hero-float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-16px);}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero__illustration{animation:none;}
+}
 .hero__title{font-size:var(--fs-hero);letter-spacing:var(--ls-hero);line-height:1.2;
   text-transform:uppercase;font-weight:400;}
 
@@ -164,16 +177,16 @@ h1,h2,h3,h4{font-weight:400;}
 .footer__copy{padding-top:40px;font-size:var(--fs-footer);color:var(--white-30);}
 
 /* ---------- scroll reveal ---------- */
-[data-reveal]{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease;}
-[data-reveal].is-visible{opacity:1;transform:translateY(0);}
-[data-reveal="fade"]{transform:none;}
+[data-reveal]{opacity:0;translate:0 40px;transition:opacity .7s ease,translate .7s ease;}
+[data-reveal].is-visible{opacity:1;translate:0 0;}
+[data-reveal="fade"]{translate:0 0;}
 [data-reveal].is-visible[data-reveal-delay="1"]{transition-delay:.08s;}
 [data-reveal].is-visible[data-reveal-delay="2"]{transition-delay:.16s;}
 [data-reveal].is-visible[data-reveal-delay="3"]{transition-delay:.24s;}
 [data-reveal].is-visible[data-reveal-delay="4"]{transition-delay:.32s;}
 [data-reveal].is-visible[data-reveal-delay="5"]{transition-delay:.4s;}
 @media (prefers-reduced-motion:reduce){
-  [data-reveal]{opacity:1;transform:none;transition:none;}
+  [data-reveal]{opacity:1;translate:0 0;transition:none;}
 }
 
 /* ---------- responsive ---------- */
@@ -200,4 +213,6 @@ h1,h2,h3,h4{font-weight:400;}
   .svc-item__aside{grid-template-columns:1fr;}
   :root{--fs-hero:48px; --lh-hero:56px; --ls-hero:0;}
   .btn{width:160px;height:160px;border-radius:80px;}
+  .hero{background-size:20px 20px;}
+  .hero__illustration{width:min(280px,80%);margin-bottom:48px;}
 }
