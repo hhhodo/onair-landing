@@ -34,6 +34,26 @@ if (collageWheel && collagePinWrap && !window.matchMedia('(prefers-reduced-motio
 }
 
 const nav = document.querySelector('.nav');
+const navBurger = document.querySelector('.nav__burger');
+if (navBurger && nav) {
+  navBurger.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('nav--open');
+    navBurger.setAttribute('aria-expanded', String(isOpen));
+  });
+  nav.querySelectorAll('.nav__mobile a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('nav--open');
+      navBurger.setAttribute('aria-expanded', 'false');
+    });
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) {
+      nav.classList.remove('nav--open');
+      navBurger.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+
 const transparentNavSections = document.querySelectorAll('.hero, .collage-pin-wrap');
 if (nav && transparentNavSections.length) {
   const intersecting = new Set();
