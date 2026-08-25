@@ -249,11 +249,11 @@ h1,h2,h3,h4{font-weight:400;}
   :root{--fs-collage-sub:18px; --lh-collage-sub:27px;}
 
   /* one consistent vertical rhythm for every section from here down */
-  .hero{padding-block:64px;}
-  .latest{padding-block:64px;}
-  .stats{padding-block:64px;}
-  .services{padding:64px 40px;}
-  .closer{padding:64px 40px 40px;}
+  .hero{padding-block:128px;}
+  .latest{padding-block:128px;}
+  .stats{padding-block:128px;}
+  .services{padding:128px 40px;}
+  .closer{padding:128px 40px 40px;}
   .footer__divider{margin-top:128px;}
 }
 
