@@ -16,10 +16,10 @@
 
   --fs-hero:60px;
   --fs-nav:16px;
-  --fs-nav-sep:14px;
+  --fs-nav-sep:16px;
   --fs-latest-h:64px;   --ls-latest-h:-2.56px; --lh-latest-h:64px;
-  --fs-counter:13px;    --ls-counter:-0.26px;  --lh-counter:16.9px;
-  --fs-viewall:14px;    --ls-viewall:-0.56px;  --lh-viewall:16.8px;
+  --fs-counter:16px;    --ls-counter:-0.32px;  --lh-counter:20.8px;
+  --fs-viewall:16px;    --ls-viewall:-0.64px;  --lh-viewall:19.2px;
   --fs-stats-h:120px;   --lh-stats-h:120px;
   --fs-stats-sub:24px;  --lh-stats-sub:36px;
   --fs-stats-body:18px; --lh-stats-body:27px;
@@ -35,7 +35,7 @@
   --fs-collage-title:64px; --lh-collage-title:96px;
   --fs-closer-h:120px;  --lh-closer-h:120px;
   --fs-closer-sub:20px; --lh-closer-sub:28px;
-  --fs-footer:14px;
+  --fs-footer:16px;
 }
 
 html,body{background:var(--bg-black);color:var(--white);font-weight:400;
@@ -263,7 +263,7 @@ h1,h2,h3,h4{font-weight:400;}
     --fs-accordion-title:28px; --lh-accordion-title:34px;
     --fs-closer-h:44px; --lh-closer-h:48px;
     --fs-collage-title:28px; --lh-collage-title:36px;
-    --fs-collage-sub:15px; --lh-collage-sub:22px;
+    --fs-collage-sub:16px; --lh-collage-sub:24px;
     --fs-latest-h:40px; --lh-latest-h:40px;
   }
 
